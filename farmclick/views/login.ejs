@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>FarmClick</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/others.js"></script>
+        <style>
+        .signupform
+        {
+            height:800px;
+            margin-top:0px;
+        }
+        input[type=text], input[type=password] ,textarea,select {
+            width: 100%;
+            padding: 10px;
+            margin: 2px 0 2px 0; 
+            display: inline-block; 
+        
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+
+/* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+         
+            border: none;
+            cursor  : pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        button:hover {
+          opacity:1;
+        }
+
+/* Extra styles for the cancel button */
+            .cancelbtn {
+              padding: 14px 20px;
+              background-color: #f44336;
+            }
+
+            /* Float cancel and signup buttons and add an equal width */
+            .cancelbtn, .signupbtn {
+              float: left;
+              width: 50%;
+            }
+
+            /* Add padding to container elements */
+            .container {
+              padding: 16px;
+            }
+
+            /* Clear floats */
+            .clearfix::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+
+            /* Change styles for cancel button and signup button on extra small screens */
+            @media screen and (max-width: 300px) {
+              .cancelbtn, .signupbtn {
+                width: 100%;
+              }
+            }
+
+    </style>
+</head>
+
+<body id="page-top" style="background-image:url('images/photo-1461886988361-c3d1d47fd6f6.jpg')">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" style="background:white;padding-top:0">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo.png" alt="Treviso theme logo"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll home" href="/">Home</a>
+                    </li>
+                    <% if(!currentUser){ %>
+                        <li>
+                            <a class="page-scroll login" href="/login">Login</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll signup" href="#signupfrom">Sign Up</a>
+                        </li>
+                    <% } else { %>
+                        <li>
+                            <a class="page-scroll profile" href="/profile">Profile</a>
+                        </li>
+                        <li>
+                            <a class="page scroll logout" href="/logout">Logout</a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="loginform" style="margin:0 auto;width:50%;height:60%;margin-top:120px;background:white;padding-top:5px;border-radius:10px">
+        <form action="/login" method="POST" style="margin:8px">
+            <input type="text" name="contact" placeholder="contact" required>
+            <input type="password" name="password" placeholder="password">
+            <% if(alert=="display"){ %>
+                <p><strong>INCORRECT CREDENTIALS</strong></p>
+            <% } %>
+            <button><strong>SUBMIT</strong></button></hr>
+            <p style="text-align:center"><a href="/forgotpassword" style="color:green">Forgot Password</a></p>
+
+        </form>
+    </div>
+
+<% include ./partials/footer %>

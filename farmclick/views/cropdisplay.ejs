@@ -1,0 +1,32 @@
+<% include ./partials/header %>
+<div class="jumbotron jumbotron-fluid" style="background:#365e38;text-align:center;">
+    <h1 style="color:white;font-family:monospace">DEALS FOUND</h1>
+</div>
+<% var images = ['images/photo-1452948491233-ad8a1ed01085.jpg','images/photo-1472653525502-fc569e405a74.jpg','images/f72e2c85.jpg','images/photo-1473648717346-73c9c15cbad6.jpg','images/photo-1507844090982-e6e9452ea68d.jpg'] %>
+<div style="margin:90px;text-align:center">
+    <% var i =0; %>
+    <% foundCrop.forEach(function(foundone){ %>
+    <% if(foundone.status!="sold"){ %>
+    <div class="row" style="margin:30px;">
+        <div class="col-sm-12">
+            <div class="jumbotron" style="background:rgba(56, 112, 59,0.4);opacity:1;background-size:100%;">
+                <div class="card">
+                    <div class="card-body" style="padding: 30px;">
+                        <h3 class="card-title" style="color:white;text-align:center; text-transform:uppercase"><b><%= foundone.cropname %></b></h3><br>
+                        <p class="card-text" style="color:white;"><h3 style="color:white;">NUMBER OF UNITS : <%= foundone.numofunits %> </h3>
+                            <h3 style="color:white;">STATUS : <span><%=foundone.status%></span></h3>
+                        </p>
+                        <a href="/crops/<%=foundone.seller[0] %>" class="btn btn-primary" style="background:black;color:white">Contact Seller</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% if(i<(images.length)-1){i++;}
+        else{i=0;}
+    %>
+    <% } %>
+    <% }); %>
+</div>
+
+<% include ./partials/footer %>

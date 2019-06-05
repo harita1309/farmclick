@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+<% if(sending==0){ %>
+    <form action="/forgotpassword1" method="POST">
+        <% if(alert=="display"){ %>
+            <p style="text-align:center">You eneter an incorrect otp please try again</p>
+        <% } %>
+        <input type="text" placeholder="enter your mobile" name="mobile">
+        <p>An OTP will be generated to your number</p>
+        <button>Submit</button>
+    </form>
+<% } %>
+<% if(sending==1){ %>
+    <form action="/forgotpassword2" method="POST">
+        <input type="text" placeholder="enter the otp" name="otp">
+        <button type="submit"></button>
+    </form>
+<% } %>
+<% if(sending==2){ %>
+    <form action="/forgotpassword3" method="OTP">
+        <input type="password" placeholder="Enter your password" name="password">
+        <button type="submit"></button>
+    </form>
+<% } %>
+<% include ./partials/footer %>

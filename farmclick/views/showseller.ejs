@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+<style>
+    .wholepage{
+        background-image:url(https://images.unsplash.com/photo-1535048637252-3a8c40fa2172?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+        padding-bottom:300px;
+        margin-left:50px;
+        margin-right:50px;
+        opacity:1;
+        padding-top:50px;
+        
+        
+    }
+    .jum1{
+        margin-left:700px;
+        margin-right:300px;
+        margin-top:100px;
+        background:rgba(0,0,0,0.2);
+    
+    }
+  /*  .abc{
+         position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; */
+
+</style>
+<div class="wholepage">
+    <div class="abc" style="background:rgba(0,0,0,0.4);height:250px;width:400px;margin:0 auto;margin-top:80px">
+    <h2 style="text-align:center;color:white">Seller Details</h2>
+    <h4 style="background:rgba(0,0,0,0.5);text-align:center;color:white;margin-top:35px">SELLER NAME</h4>
+    <h4 style="color:white;text-align:center"><%= founduser.firstname %> <%= founduser.lastname %></h5>
+    <h4 style="background:rgba(0,0,0,0.5);text-align:center;color:white;margin-top:35px">SELLER CONTACT</h4>
+    <h4 style="color:white;text-align:center"><%=founduser.username %></h5>
+
+
+    </div>
+</div>    
+</div>
+
+
+<% include ./partials/footer %>

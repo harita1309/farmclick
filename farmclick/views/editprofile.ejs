@@ -1,0 +1,40 @@
+<% include ./partials/header %>
+<style>
+    .jumbotron{
+        background-image:url(https://images.designtrends.com/wp-content/uploads/2015/11/30160126/Plain-Light-Backgrounds.jpg);
+        margin-left:100px;
+        margin-right:200px;
+        padding-right:300px;
+        width:100%;
+        height:100%;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+    }
+    .container{
+        padding-right:200px;
+        /*padding-left:50px;*/
+    }
+</style>
+
+<div class="container">
+
+<div class="jumbotron">
+    <h2 style="color:white;"><center>Edit your profile here!</center></h2>
+    <form action="/editprofile" method="POST" style="width:70%;margin-left:120px">
+        <label style="color:white;">First Name :</label>
+        <input type="text" name="firstname" value=<%= user.firstname %>>
+        <label style="color:white;">Last Name : </label>
+        <input type="text" name="lastname" value=<%= user.lastname %>><br>
+        <label style="color:white;">Contact : </label><br>
+        <input type="text" name="contact" value=<%= user.username %>>
+        <br><label style="color:white;">Address : </label>
+        <input type="text" name="address" value=<%= user.address %>>
+        <label style="color:white;">Mandal : </label>
+        <input type="text" name="mandal" value=<%= user.mandal %>>
+        <label style="color:white;">District : </label>
+        <input type="text" name="district" value=<%= user.district %>><br><br>
+        <button type="submit" style="background:#182438;text-size:1.6rem"><strong>SAVE</strong></button>
+    </form>
+</div>
+</div>
+<% include ./partials/footer %>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <!-- for navbar -->
+       <link href="/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/others.js"></script>
+        
+        
+        
+        <link href="/stylesheet/css/file.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <style>
+        body{
+            padding-top:0px;
+        }
+              .signupform
+        {
+            height:800px;
+            margin-top:0px;
+        }
+        input[type=text], input[type=password] ,textarea,select {
+            width: 100%;
+            padding: 10px;
+            margin: 2px 0 2px 0; 
+            display: inline-block; 
+        
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+
+/* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+         
+            border: none;
+            cursor  : pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        button:hover {
+          opacity:1;
+        }
+
+/* Extra styles for the cancel button */
+            .cancelbtn {
+              padding: 14px 20px;
+              background-color: #f44336;
+            }
+
+            /* Float cancel and signup buttons and add an equal width */
+            .cancelbtn, .signupbtn {
+              float: left;
+              width: 50%;
+            }
+
+            /* Add padding to container elements */
+            .container {
+              padding: 16px;
+            }
+
+            /* Clear floats */
+            .clearfix::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+
+            /* Change styles for cancel button and signup button on extra small screens */
+            @media screen and (max-width: 300px) {
+              .cancelbtn, .signupbtn {
+                width: 100%;
+              }
+            }
+        
+
+
+
+
+.slide {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slide:hover {
+  opacity: 1;
+}
+
+.slide::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 08px;
+  height: 25px;
+  background: #000000;
+  cursor: pointer;
+}
+
+        body{
+         padding-top:80px;
+         padding-bottom:80px;
+         background:url("https://images.unsplash.com/photo-1444832229138-f82424c2f08a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80");
+        }
+        .container{
+         background-color:#e6f2ff;
+        }
+        </style>
+    </head>
+<body>
+        <nav class="navbar navbar-default" style="background:#f7f9f8;padding-top:0;margin-top:0">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo.png" alt="Treviso theme logo"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll home" href="/">Home</a>
+                    </li>
+                    <% if(!currentUser){ %>
+                        <li>
+                            <a class="page-scroll login" href="/login">Login</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll signup" href="#signupfrom">Sign Up</a>
+                        </li>
+                    <% } else { %>
+                        <li>
+                            <a class="page-scroll profile" href="/profile">Profile</a>
+                        </li>
+                        <li>
+                            <a class="page scroll logout" href="/logout">Logout</a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    
+    
+    
+ <div class="container" style="width:60%;background:rgba(0,0,0,0.2)">
+<form action="/emicalculator" method="POST"> 
+
+  <h3 style="color:white">Principal amount:</h3>
+  <br>
+  <input type="range" class="slide" id="amountId" min="100" max="400000" step="100" name="amount" value="100" oninput="amountOutId.value = amountId.value">
+   <strong><output name="amountOutName" id="amountOutId"  style="color:white">100</output></strong>
+  <h3 style="color:white">Interest rate per annum:</h3>
+  <br>
+  <input class="slide" type="range" id="interestId" min="0" max="15" step="0.1" name="interest" value="0" oninput="interestOutId.value=interestId.value"  >
+   <strong><output name="interestOutName" id="interestOutId" style="color:white">0</output></strong>
+  <h3 style="color:white">No. of years:</h3>
+  <br>
+  <input class="slide" type="range" id="timeId" min="1" max="10" step="1" name="time" value="1" oninput="timeOutId.value=timeId.value">
+  <strong><output name="timeOutName" id="timeOutId" style="color:white">1</output></strong>
+  <h3 style="color:white">No. of payments per year:</h3>
+  <br>
+  <input class="slide" type="range" id="termsId" min="1" max="10" name="terms" value="1" oninput="termsOutId.value=termsId.value" >
+  <strong><output name="termsOutName" id="termsOutId" style="color:white">1</output></strong>
+  <h3 style="color:white">Type of interest:</h3>
+  <br>
+  <input type="radio" name="type" value="simple" checked><strong  style="color:white;font-size:2rem">       Simple Interest</strong></br>
+  <input type="radio" name="type" value="compound"><strong  style="color:white;font-size:2rem">     Compund Interest</strong>
+  <br><br>
+  <button class="btn btn-success">SUBMIT</button>
+  <br><br><br>
+ </form>
+ </div>
+ 
+
+ 
+ </body>
+ </html>
